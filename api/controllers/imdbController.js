@@ -2,7 +2,7 @@ import puppeteer from 'puppeteer';
 
 export async function fetchImdbTop250Series(req, res) {
   try {
-    const browser = await puppeteer.launch();
+    const browser = await puppeteer.launch({ args: ['--no-sandbox', '--disable-setuid-sandbox'] });
     const page = await browser.newPage();
 
     await page.goto('https://www.imdb.com/chart/toptv/');
@@ -32,7 +32,7 @@ export async function fetchImdbSeriesRating(req, res) {
 
   try {
     // initiate puppeteer (headless chrome)
-    const browser = await puppeteer.launch();
+    const browser = await puppeteer.launch({ args: ['--no-sandbox', '--disable-setuid-sandbox'] });
     // open a new tab
     const page = await browser.newPage();
 
