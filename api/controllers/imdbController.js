@@ -61,7 +61,8 @@ export async function fetchImdbSeriesRating(req, res) {
     
     // if its a valid series, scrap its Title and Overall rating info.
     const seriesTitleElement = await page.$('div#title-overview-widget div.title_wrapper h1');
-    const seriesTitle = await (await seriesTitleElement.getProperty('textContent')).jsonValue();
+    let seriesTitle = await (await seriesTitleElement.getProperty('textContent')).jsonValue();
+    seriesTitle = seriesTitle.trim();
   
     const seriesEpisodeCountElement = await page.$('div#title-overview-widget span.bp_sub_heading');
     const seriesEpisodeCount = await (await seriesEpisodeCountElement.getProperty('textContent')).jsonValue();
