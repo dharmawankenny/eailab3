@@ -11,7 +11,7 @@ Find the detailed summary of a TV Series from IMDB, input the series's IMDB ID a
 ### To use:
 `npm start`
 
-Run it again and again each time you want to find your TV Series summary.
+It should start the server on [localhost:5000](http://localhost:5000), access it via postman by sending GET request to [/api/fetchTop250](http://localhost:5000/api/fetchTop250) to get top 250 tv series, and [/api/fetchSeriesRating?seriesId={YOUR SERIES ID, e.g. tt0944947 for Game of Thrones}](http://localhost:5000/api/fetchSeriesRating?seriesId=tt0944947).
 
 By Kenny Reida Dharmawan,
 1506757472.
